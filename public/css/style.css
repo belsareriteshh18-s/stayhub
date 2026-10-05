@@ -1,0 +1,496 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 5rem;
+    background-color: #fafafa !important;
+    z-index: 1030;
+}
+
+.stayhub-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+.nav-item{
+    font-size: 1.2rem;
+    
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-nav .nav-link {
+    white-space: nowrap;
+}
+/* =========================
+========================= */
+
+#filters {
+    display: flex !important;
+    flex-wrap:wrap;
+    flex-direction: row !important;
+     align-items: flex-start;
+    gap: 1.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #ddd;
+   
+}
+
+.filter {
+   
+    /* text-align: center; */
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    min-width: 70px;
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.filter:hover {
+    opacity: 1;
+     cursor: pointer;
+
+
+}
+.filter i {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 7px;
+}
+
+.filter span {
+    display: block;
+    font-size: 0.8rem;
+}
+
+/* =========================
+========================= */
+
+.listing-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 0px;
+}
+
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+    background: transparent;
+}
+
+.card-img-top {
+    width: 100% !important;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1rem !important;
+}
+
+.card-body {
+    padding: 0.7rem 0.2rem;
+}
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+.tax-info{
+    display:none;
+}
+
+.tax-toggle{
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    /* z-index: 1050; */
+}
+footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.f-info {
+    min-height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.f-info-socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.f-info-socials i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.f-info-socials i:hover {
+    transform: scale(1.2);
+}
+
+.f-info-brand {
+    width: 100%;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.f-info-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+/* 
+.more-filter {
+    margin-left: auto;
+
+    background: white;
+    border: 1px solid #ddd;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+} */
+
+/* ============================= */
+/* AIRBNB STYLE SEARCH BAR */
+/* ============================= */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    height: 52px;
+
+    background: #fff;
+
+    border: 1px solid #dddddd;
+    border-radius: 30px;
+
+    padding: 5px 6px 5px 20px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+    margin: 20px auto;
+}
+
+/* Search options */
+
+.search-option {
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #222;
+
+    white-space: nowrap;
+}
+
+/* Add guests */
+
+.guests-option {
+    color: #717171;
+    font-weight: 400;
+}
+
+/* Divider */
+
+.search-divider {
+    width: 1px;
+    height: 24px;
+
+    background: #dddddd;
+}
+
+/* Search button */
+
+.search-button {
+    width: 40px;
+    height: 40px;
+
+    margin-left: 8px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ff385c;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+/* Icon */
+
+.search-button i {
+    font-size: 14px;
+}
+
+/* Hover */
+
+.search-button:hover {
+    background: #e61e4d;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 767.98px) {
+
+    .navbar {
+        height: auto;
+        min-height: 5rem;
+        background-color: #fafafa !important;
+    }
+
+    /* Mobile menu */
+    .navbar-collapse {
+        background-color: #fafafa !important;
+        padding: 15px;
+        margin-top: 5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        position: relative;
+        z-index: 1031;
+    }
+
+    .navbar-nav {
+        background-color: #fafafa !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 8px;
+    }
+
+    /* Dropdown inside mobile menu */
+    .dropdown-menu {
+        background-color: #ffffff !important;
+        border: 1px solid #ddd;
+    }
+
+    /* Account dropdown */
+    .navbar .dropdown-menu {
+        position: static;
+    }
+
+.listing-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar{
+    height: 5rem;
+    background-color: rgb(250, 250, 250);
+
+}
+.stayhub-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+.nav-link{
+    color:#222222 !important; 
+}
+
+
+footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.f-info {
+    min-height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.f-info-socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.f-info-socials i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.f-info-socials i:hover {
+    transform: scale(1.2);
+}
+
+.f-info-brand {
+    width: 100%;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.f-info-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+/* Cards */
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius:1rem !important;
+    width: 100% !important;
+}
+
+/*hover effect*/
+.card-img-top:hover{
+    transform: scale(1.01);
+}
+.card-img-overlay{
+    opacity : 0 ;
+}
+.card-img-overlay:hover{
+    opacity: 0.1;
+    background-color: white;
+}
+
+
+/* =========================
+   map 
+========================= */
+
+#map { height:400px;
+    width:80hv;
+    }
+
+
+
+@media (max-width: 768px) {
+
+    .navbar-search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 5px 0 10px 0;
+    }
+
+    .search-bar {
+        width: 90%;
+        max-width: 380px;
+
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #filters {
+        gap: 18px;
+        padding: 8px 12px;
+    }
+
+    .filter {
+        font-size: 10px;
+    }
+
+    .filter i {
+        font-size: 16px;
+    }
+
+    /* Hide categories that don't fit */
+    .filter:nth-child(n+5):not(.more-filter) {
+        display: none;
+    }
+
+    .more-filter {
+        display: flex !important;
+        flex-shrink: 0;
+    }
+
+    .navbar-search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-search form {
+        width: 90% !important;
+        max-width: 380px;
+    }
+
+}}

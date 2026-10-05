@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+
+    <div class="container-fluid">
+      <a href="/listings" class="navbar-brand d-flex align-items-center gap-2">
+        <!-- Brand -->
+            <img src="/stayhub.png"
+             alt="stayhub logo"
+             width="60"
+             height="60"
+             class="d-inline-block align-text-top">
+       </a>
+
+            <!-- <span class="fw-bold fs-5">
+                stayhub
+            </span> -->
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Left Side -->
+            <ul class="navbar-nav me-auto mb-1 mb-lg-1">
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/listings">Explore </a>
+                </li>
+            </ul>
+
+<!-- Airbnb Style Search Bar -->
+<div class="navbar-search d-flex justify-content-center w-100">
+
+    <form class="d-flex align-items-center border rounded-pill shadow-sm bg-white p-1"
+          style="width: 380px;">
+
+        <input
+            type="search"
+            class="form-control border-0 shadow-none px-3"
+            placeholder="Search Destination"
+            name="search"
+        >
+
+        <button
+            type="submit"
+            class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+            style="width: 40px; height: 40px;"
+        >
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </form>
+
+</div>
+            <!-- Right Side -->
+            <ul class="navbar-nav">
+             <li class="nav-item">
+                       <a class="nav-link" href="/listings/new">Add Stay </a>
+                </li>
+
+             <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle d-flex align-items-center gap-2"
+                       href="#"
+                       id="accountDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+
+                        <i class="fa-solid fa-circle-user fs-5"></i>
+                        <span>Account</span>
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end shadow"
+                        aria-labelledby="accountDropdown">
+
+                        <% if (!currentuser) { %>
+
+                            <!-- Login -->
+                            <li>
+                                <a class="dropdown-item" href="/login">
+                                    <i class="fa-solid fa-right-to-bracket me-2"></i>
+                                    Login
+                                </a>
+                            </li>
+
+                            <!-- Signup -->
+                            <li>
+                                <a class="dropdown-item" href="/signup">
+                                    <i class="fa-solid fa-user-plus me-2"></i>
+                                    Signup
+                                </a>
+                            </li>
+
+                        <% } %>
+
+                        <% if (currentuser) { %>
+
+                            <!-- Logout -->
+                            <li>
+                                <a class="dropdown-item text-danger" href="/logout">
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                    Logout
+                                </a>
+                            </li>
+
+                        <% } %>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>

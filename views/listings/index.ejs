@@ -1,0 +1,138 @@
+<% layout("/layouts/boilerplate") %> 
+
+<div id="filters" class="mt-4">
+
+    <div class="filter">
+        <i class="fa-solid fa-fire"></i>
+        <span>Trending</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-hotel"></i>
+        <span>Hotels</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-building"></i>
+        <span>Flats</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-house"></i>
+        <span>Homes</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-water"></i>
+        <span>Beach</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-mountain"></i>
+        <span>Mountain</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-tree"></i>
+        <span>Nature</span>
+    </div>
+        <div class="filter">
+        <i class="fa-solid fa-person-swimming"></i>
+        <span>Pool</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-crown"></i>
+        <span>Luxury</span>
+    </div>
+      <div class="filter">
+        <i class="fa-regular fa-snowflake"></i>
+        <span>Snow</span>
+    </div>
+
+    <div class="filter">
+        <i class="fa-solid fa-globe"></i>
+        <span>World</span>
+    </div>
+     <!-- MORE -->
+    <div class="filter more-filter">
+        <i class="fa-solid fa-ellipsis"></i>
+        <span>More</span>
+    </div>
+
+    <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+           <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+           <label class="form-check-label" for="switchCheckDefault">Display total after taxes </label>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid listing-container mt-4"> 
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <% for (let listing of allListings) { %> 
+
+            <div class="col"> 
+
+                <a 
+                    href="/listings/<%= listing._id %>" 
+                    class="text-decoration-none text-dark"
+                > 
+
+                    <div class="card h-100 shadow-sm"> 
+
+                        <img 
+                            src="<%= listing.image?.url || '/images/default.jpg' %>" 
+                            class="card-img-top" 
+                            alt="<%= listing.title %>" 
+                            style="height: 220px; object-fit: cover;"
+                        > 
+
+                        <div class="card-body"> 
+
+                            <h5 class="card-title">
+                                <%= listing.title %>
+                            </h5> 
+
+                            <p class="card-text text-muted">
+                                <%= listing.description %>
+                            </p> 
+
+                            <p class="card-text">
+                                <strong>₹<%= listing.price %></strong> / night
+                                <i class="tax-info"> &nbsp; &nbsp+18% GST </i>
+                            </p> 
+
+                            <!-- <span class="btn btn-danger">
+                                View Details
+                            </span>  -->
+
+                        </div> 
+
+                    </div> 
+
+                </a> 
+
+            </div> 
+
+        <% } %> 
+
+    </div> 
+</div>
+
+
+<script>
+    let taxSwitch =document.getElementById("switchCheckDefault");
+    taxSwitch.addEventListener("click",() =>{
+        let taxInfo = document.querySelectorAll(".tax-info");
+        taxInfo.forEach((info) =>{
+            if(taxSwitch.checked){
+                info.style.display = "inline";
+            }else{
+                info.style.display = "none";
+            }
+        })
+    })
+</script>

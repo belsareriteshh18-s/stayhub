@@ -1,0 +1,173 @@
+/* =========================================
+   STAYHUB - STAR RATING
+========================================= */
+
+.rating-section {
+    margin-bottom: 24px;
+}
+
+.rating-title {
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   STAR CONTAINER
+========================================= */
+
+.rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+}
+
+
+/* =========================================
+   HIDE RADIO BUTTONS
+========================================= */
+
+.rating input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   STAR
+========================================= */
+
+.rating label {
+    position: relative;
+    display: block;
+
+    width: 38px;
+    height: 38px;
+
+    cursor: pointer;
+
+    color: #d8d8d8;
+
+    font-size: 36px;
+    line-height: 38px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* Star symbol */
+
+.rating label::before {
+    content: "★";
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.rating label:hover {
+    color: #ffc107;
+
+    transform:
+        scale(1.22)
+        rotate(-8deg);
+
+    filter:
+        drop-shadow(0 0 6px rgba(255, 193, 7, 0.55));
+}
+
+
+/* Fill stars before hovered star */
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffc107;
+
+    filter:
+        drop-shadow(0 0 5px rgba(255, 193, 7, 0.45));
+}
+
+
+/* =========================================
+   SELECTED STARS
+========================================= */
+
+.rating input:checked ~ label {
+    color: #ffc107;
+
+    filter:
+        drop-shadow(0 0 5px rgba(255, 193, 7, 0.4));
+}
+
+
+/* =========================================
+   CLICK / POP EFFECT
+========================================= */
+
+.rating input:checked + label {
+    animation: starPop 0.4s ease;
+}
+
+
+@keyframes starPop {
+
+    0% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1.35) rotate(-8deg);
+    }
+
+    75% {
+        transform: scale(0.9) rotate(4deg);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================
+   RATING ERROR
+========================================= */
+
+.rating-error {
+    display: none;
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .rating {
+        gap: 2px;
+    }
+
+    .rating label {
+        width: 34px;
+        height: 34px;
+
+        font-size: 32px;
+        line-height: 34px;
+    }
+
+}
