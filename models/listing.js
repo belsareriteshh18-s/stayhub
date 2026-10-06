@@ -41,17 +41,17 @@ const listingSchema = new mongoose.Schema({
         type:Schema.Types.ObjectId,
         ref:"User",
     },
-    geometry:{
+    geometry: {
     type: {
-      type: String, // Don't do `{ location: { type: String } }`
-      enum: ['Point'], // 'location.type' must be 'Point'
-      required: true
+        type: String,
+        enum: ["Point"],
+        required: true
     },
     coordinates: {
-      type: [Number],
-      required: true
+        type: [Number],
+        required: true
     }
-  }
+}
 
 });
 

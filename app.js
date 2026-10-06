@@ -21,8 +21,8 @@ const userRouter=require("./routes/user.js");
 
 app.use(express.urlencoded({ extended: true }));
 //database
- //const MONGO_URL='mongodb://127.0.0.1:27017/StayHub';
-const dbUrl=process.env.ATLASDB_URL;
+ const MONGO_URL='mongodb://127.0.0.1:27017/StayHub';
+//const dbUrl=process.env.ATLASDB_URL;
 
 main()
 .then(()=>{
@@ -33,7 +33,7 @@ main()
  });
 
  async function main(){
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(MONGO_URL);
 }
 
 app.set("view engine" ,"ejs");      // ejs se view
@@ -43,7 +43,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs" ,ejsMate);
 
 const sessionOption={
-    secret:"mySuperSecret",
+    secret:process.env.SESSION_SECRET ,
     resave:false,
     saveUninitialized:true,
     cookie:{

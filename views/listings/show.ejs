@@ -1,11 +1,9 @@
 <% layout("/layouts/boilerplate") %>
 
-<!-- ================= MAP TOKEN ================= -->
 <script>
     const mapToken = "<%= process.env.MAP_TOKEN %>";
-//    const coordinates =
+    const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
 </script>
-
 
 <div class="container py-4 py-md-5">
 
@@ -568,18 +566,15 @@
             </div>
 
 
-            <!-- ================= MAP ================= -->
+          <!-- ================= MAP ================= -->
 
-            <div class="text-center bg-light border rounded-4 p-4 mt-4">
+<div class="text-center bg-light border rounded-4 p-4 mt-4">
+    <h3>
+        Where you'll be
+    </h3>
 
-                <h3>
-                    Where you'll be
-                </h3>
-
-                <div id="map"></div>
-
-            </div>
-
+    <div id="map"></div>
+</div>
 
         </div>
 
@@ -587,7 +582,5 @@
 
 </div>
 
-
-<!-- ================= MAP SCRIPT ================= -->
-<script src="/js/mapbox.js"></script>
+<script src="/js/map.js"></script>
 

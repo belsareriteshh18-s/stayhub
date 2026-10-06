@@ -38,14 +38,19 @@
 <!-- Airbnb Style Search Bar -->
 <div class="navbar-search d-flex justify-content-center w-100">
 
-    <form class="d-flex align-items-center border rounded-pill shadow-sm bg-white p-1"
-          style="width: 380px;">
+    <form
+        action="/listings/search"
+        method="GET"
+        class="d-flex align-items-center border rounded-pill shadow-sm bg-white p-1"
+        style="width: 380px;"
+    >
 
         <input
             type="search"
             class="form-control border-0 shadow-none px-3"
             placeholder="Search Destination"
-            name="search"
+            name="location"
+            required
         >
 
         <button

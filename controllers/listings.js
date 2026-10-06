@@ -96,6 +96,22 @@ module.exports.updateListings = async (req, res) => {
     res.redirect(`/listings/${id}`);
 };
 
+module.exports.search=async (req, res) => {
+
+    const { location } = req.query;
+
+    const allListings = await Listing.find({
+        location: {
+            $regex: location,
+            $options: "i"
+        }
+    });
+
+    res.render("listings/index.ejs", {
+        allListings
+    });
+};
+
 //delete route
 module.exports.deletedListings=async(req ,res)=>{
    let {id}=req.params;
@@ -104,3 +120,4 @@ module.exports.deletedListings=async(req ,res)=>{
       req.flash("success","lisitng deleted");
   res.redirect("/listings");
 }
+

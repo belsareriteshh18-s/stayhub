@@ -23,6 +23,11 @@ router.route("/")
 //new
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
+router.get(
+    "/search",
+    wrapAsync(listingController.search)
+);
+
 //edit
 router.get(
     "/:id/edit",
@@ -30,6 +35,7 @@ router.get(
     isOwner,
     wrapAsync(listingController.editListings)
 );
+
 
 //show, update, delete
 router.route("/:id")
@@ -48,4 +54,27 @@ router.route("/:id")
     isOwner,
     wrapAsync(listingController.deletedListings)
 );
+
+
+
+
+//show, update, delete
+router.route("/:id")
+.get(
+    wrapAsync(listingController.ShowListings)
+)
+.put(
+    isLoggedIn,
+    isOwner,
+    upload.single("image"),
+    validatelisting,
+    wrapAsync(listingController.updateListings)
+)
+.delete(
+    isLoggedIn,
+    isOwner,
+    wrapAsync(listingController.deletedListings)
+);
+
+
 module.exports=router;
