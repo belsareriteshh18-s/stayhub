@@ -493,3 +493,615 @@ footer {
     }
 
 }}
+
+
+/* ==========================================
+   STAYHUB - PREMIUM ANIMATIONS & HOVER EFFECTS
+========================================== */
+
+/* 1. Global smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Page entrance animation */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageFadeIn 0.7s ease-out;
+}
+
+/* 3. Premium navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    transition: box-shadow 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.navbar:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Logo hover */
+.stayhub-logo {
+    transition: transform 0.35s ease;
+}
+
+.stayhub-logo:hover {
+    transform: scale(1.08);
+}
+
+/* 4. Animated navbar links */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 4px;
+    height: 2px;
+    background: #ff385c;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff385c !important;
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* 5. Listing card entrance */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.listing-container .card {
+    animation: cardEntrance 0.65s ease both;
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+    border-radius: 16px;
+}
+
+/* Stagger the card animations */
+.listing-container .card:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.listing-container .card:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+.listing-container .card:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+.listing-container .card:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+.listing-container .card:nth-child(6) {
+    animation-delay: 0.40s;
+}
+
+/* Card hover */
+.listing-container .card:hover {
+    transform: translateY(-8px);
+}
+
+/* 6. Image zoom effect */
+.card-img-top {
+    transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1),
+                filter 0.35s ease;
+    overflow: hidden;
+}
+
+.listing-container .card:hover .card-img-top {
+    transform: scale(1.045);
+    filter: brightness(1.04);
+}
+
+/* 7. Listing title animation */
+.card-title {
+    transition: color 0.3s ease;
+}
+
+.listing-container .card:hover .card-title {
+    color: #ff385c;
+}
+
+/* 8. Filter hover animation */
+.filter {
+    cursor: pointer;
+    transition: opacity 0.3s ease,
+                transform 0.3s ease,
+                color 0.3s ease;
+}
+
+.filter:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    color: #ff385c;
+}
+
+.filter i {
+    transition: transform 0.3s ease;
+}
+
+.filter:hover i {
+    transform: scale(1.15);
+}
+
+/* 9. Premium search bar */
+.search-bar {
+    transition: box-shadow 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.search-bar:hover {
+    border-color: #ff385c;
+    box-shadow: 0 5px 22px rgba(255, 56, 92, 0.14);
+}
+
+.search-bar:focus-within {
+    border-color: #ff385c;
+    box-shadow: 0 0 0 4px rgba(255, 56, 92, 0.10);
+}
+
+/* 10. Search button animation */
+.search-button {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #e61e4d;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(255, 56, 92, 0.3);
+}
+
+.search-button:active {
+    transform: scale(0.94);
+}
+
+/* 11. Animated footer social icons */
+.f-info-socials i {
+    transition: transform 0.3s ease,
+                color 0.3s ease;
+}
+
+.f-info-socials i:hover {
+    transform: translateY(-5px) scale(1.18);
+    color: #ff385c;
+}
+
+/* 12. Footer links */
+.f-info-links a {
+    transition: color 0.3s ease;
+}
+
+.f-info-links a:hover {
+    color: #ff385c;
+}
+
+/* 13. Smooth map appearance */
+#map {
+    animation: pageFadeIn 0.8s ease-out;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* 14. Better keyboard accessibility */
+.navbar-nav .nav-link:focus-visible,
+.search-button:focus-visible,
+.f-info-links a:focus-visible {
+    outline: 2px solid #ff385c;
+    outline-offset: 4px;
+}
+
+/* 15. Reduce animations for users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 16. Mobile optimizations */
+@media (max-width: 768px) {
+    .listing-container .card:hover {
+        transform: translateY(-3px);
+    }
+
+    .listing-container .card:hover .card-img-top {
+        transform: scale(1.02);
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+}
+/* ================================
+   STAYHUB FLASH MESSAGE UI
+================================ */
+
+.flash-message {
+    width: 90%;
+    max-width: 650px;
+    margin: 22px auto;
+    padding: 18px 48px 18px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    border: 1px solid transparent;
+    border-radius: 14px;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
+
+    position: relative;
+    animation: flashEnter 0.4s ease-out;
+}
+
+/* SUCCESS MESSAGE */
+
+.flash-success {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+}
+
+.flash-success .flash-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+/* ERROR MESSAGE */
+
+.flash-error {
+    background: #fff1f2;
+    border-color: #fecdd3;
+    color: #9f1239;
+}
+
+.flash-error .flash-icon {
+    background: #ffe4e6;
+    color: #e11d48;
+}
+
+/* ICON CIRCLE */
+
+.flash-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 21px;
+}
+
+/* MESSAGE CONTENT */
+
+.flash-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.flash-content strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.flash-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* CUSTOM CLOSE BUTTON */
+
+.flash-message .flash-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+
+    color: inherit;
+    font-size: 19px;
+    cursor: pointer;
+
+    opacity: 0.65;
+    transition: background 0.2s ease,
+                opacity 0.2s ease,
+                transform 0.2s ease;
+}
+
+.flash-message .flash-close:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.06);
+    transform: rotate(90deg);
+}
+
+/* ENTRANCE ANIMATION */
+
+@keyframes flashEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 576px) {
+    .flash-message {
+        width: 94%;
+        margin: 16px auto;
+        padding: 15px 42px 15px 12px;
+        gap: 11px;
+        border-radius: 12px;
+    }
+
+    .flash-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 17px;
+    }
+
+    .flash-content strong {
+        font-size: 14px;
+    }
+
+    .flash-content p {
+        font-size: 13px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .flash-message {
+        animation: none;
+    }
+
+    .flash-close {
+        transition: none;
+    }
+}
+/* =================================
+   STAYHUB PROPERTY DETAILS
+================================= */
+
+.stayhub-property {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.property-gallery {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 14px;
+    height: 390px;
+}
+
+.main-property-image,
+.small-property-image {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.main-property-image img,
+.small-property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.main-property-image img:hover,
+.small-property-image img:hover {
+    transform: scale(1.04);
+}
+
+.side-property-images {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    min-height: 0;
+}
+
+.property-about h4,
+.property-amenities h4 {
+    font-size: 21px;
+}
+
+.property-about p {
+    line-height: 1.8;
+}
+
+.amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+}
+
+.amenities-list span {
+    color: #444;
+    font-size: 15px;
+}
+
+.amenities-list i {
+    color: #2563eb;
+    margin-right: 7px;
+}
+
+.booking-sidebar {
+    position: sticky;
+    top: 90px;
+}
+
+.booking-card {
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.booking-card h2 {
+    color: #111827;
+}
+
+.booking-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 9px;
+    background: #2563eb;
+    font-weight: 700;
+}
+
+.booking-button:hover {
+    background: #1d4ed8;
+}
+
+.booking-note {
+    padding: 13px;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: 14px;
+}
+
+.rating-summary-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.rating-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    min-height: 60px;
+    padding: 10px;
+    border-radius: 14px;
+    background: #2563eb;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.reviews-link {
+    display: block;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.reviews-link:hover {
+    text-decoration: underline;
+}
+
+.location-summary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.location-summary > i {
+    color: #2563eb;
+    font-size: 24px;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 767px) {
+
+    .property-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: 260px 120px;
+        height: auto;
+    }
+
+    .side-property-images {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 120px;
+    }
+
+    .booking-sidebar {
+        position: static;
+    }
+
+    .booking-card {
+        padding: 18px;
+    }
+
+}

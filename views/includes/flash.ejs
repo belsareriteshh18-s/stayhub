@@ -1,24 +1,45 @@
-<%if(success && success.length){%>
-<div class="alert alert-success 
-alert-dismissible fade show show col-6 offset-3 "role="alert">
-      <%=success%>
-      <button type="button"
-       class="btn-close" 
-       data-bs-dismiss="alert"
-        aria-label="Close">
-      </button>
-</div>
-<%}%>
+<% if (success && success.length) { %>
+    <div class="flash-message flash-success alert alert-dismissible fade show"
+         role="alert">
 
-<%if(error && error.length){%>
-<div class="alert alert-danger 
-alert-dismissible fade show show col-6 offset-3 "role="alert">
-      <%=error%>
-      <button type="button"
-       class="btn-close" 
-       data-bs-dismiss="alert"
-        aria-label="Close">
-      </button>
-</div>
-<%}%>
+        <div class="flash-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
 
+        <div class="flash-content">
+            <strong>Success!</strong>
+            <p><%= success.join ? success.join(", ") : success %></p>
+        </div>
+
+        <button type="button"
+                class="flash-close"
+                data-bs-dismiss="alert"
+                aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+<% } %>
+
+<% if (error && error.length) { %>
+    <div class="flash-message flash-error alert alert-dismissible fade show"
+         role="alert">
+
+        <div class="flash-icon">
+            <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+
+        <div class="flash-content">
+            <strong>Error!</strong>
+            <p><%= error.join ? error.join(", ") : error %></p>
+        </div>
+
+        <button type="button"
+                class="flash-close"
+                data-bs-dismiss="alert"
+                aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+<% } %>
