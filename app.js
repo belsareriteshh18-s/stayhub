@@ -119,6 +119,10 @@ app.get("/about", (req, res) => {
     res.render("includes/about");
 });
 
+// Home Page
+app.get("/", (req, res) => {
+    res.render("home.ejs");
+});
 
 // 404 Error Handler
 app.use((req, res, next) => {
@@ -142,9 +146,6 @@ app.use((err, req, res, next) => {
         statusCode: statusCode
     });
 });
-
-
-
 // Start Server Only After Database Connection
 async function startServer() {
     try {
