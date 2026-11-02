@@ -1,0 +1,52 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container mt-5">
+    <h2 class="mb-4">My Bookings</h2>
+
+<% if (bookings.length === 0) { %>
+    <div class="alert alert-info">
+        You haven't made any bookings yet.
+    </div>
+<% } else { %> 
+
+    <div class="row">
+        <% bookings.forEach((booking) => { %>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            <%= booking.listing ? booking.listing.title : "Listing unavailable" %>
+                        </h5>
+
+                        <p><strong>Name:</strong> <%= booking.name %></p>
+                        <p><strong>Address:</strong> <%= booking.address %></p>
+                        <p><strong>Phone:</strong> <%= booking.phone %></p>
+                        <p><strong>Date:</strong> <%= new Date(booking.date).toLocaleDateString() %></p>
+                        <p><strong>Time:</strong> <%= booking.time %></p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            <span class="badge bg-info">
+                                <%= booking.status %>
+                            </span>
+                        </p>
+
+                        <% if (booking.status === "Pending") { %>
+                            <form action="/bookings/<%= booking._id %>/cancel" method="POST">
+                                <button type="submit" class="btn btn-danger">
+                                    Cancel Booking
+                                </button>
+                            </form>
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+<% } %>
+
+
+</div>

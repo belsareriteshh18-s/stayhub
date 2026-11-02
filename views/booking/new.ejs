@@ -1,0 +1,74 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5 mb-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow p-4">
+
+                <h2 class="text-center mb-4">Book Your Stay</h2>
+
+                <h5><%= listing.title %></h5>
+
+                <p>Price: ₹<%= listing.price.toLocaleString("en-IN") %> / night</p>
+
+                <form action="/listings/<%= listing._id %>/bookings"
+                      method="POST">
+
+                    <div class="mb-3">
+                        <label>Full Name</label>
+                        <input type="text"
+                               name="booking[name]"
+                               class="form-control"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <textarea name="booking[address]"
+                                  class="form-control"
+                                  required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Phone Number</label>
+                        <input type="tel"
+                               name="booking[phone]"
+                               class="form-control"
+                               pattern="[0-9]{10}"
+                               maxlength="10"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Booking Date</label>
+                        <input type="date"
+                               name="booking[date]"
+                               class="form-control"
+                               min="<%= new Date().toLocaleDateString('en-CA') %>"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Booking Time</label>
+                        <input type="time"
+                               name="booking[time]"
+                               class="form-control"
+                               required>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger w-100">
+                        Confirm Booking
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

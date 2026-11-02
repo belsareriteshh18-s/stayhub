@@ -69,7 +69,14 @@
              <li class="nav-item">
                        <a class="nav-link" href="/listings/new">Add Stay </a>
                 </li>
-
+            <% if (currentuser) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/bookings/my">
+                <i class="fa-solid fa-calendar-check me-1"></i>
+                 My Bookings
+                 </a>
+                 </li>
+                   <% } %>
              <li class="nav-item">
                     <a class="nav-link" href="/about">
                         About Us
@@ -88,6 +95,7 @@
                         <span>Account</span>
 
                     </a>
+                    
 
                     <ul class="dropdown-menu dropdown-menu-end shadow"
                         aria-labelledby="accountDropdown">

@@ -5,6 +5,9 @@ if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
 }
 
+
+
+
 const express = require("express"); // express
 const app = express();
 
@@ -22,7 +25,7 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js"); // listing route
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
-
+const bookingRouter = require("./routes/booking");
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -94,6 +97,9 @@ app.use((req, res, next) => {
 });
 
 
+
+app.use("/", bookingRouter);
+
 // Demo User Route (commented)
 // app.get("/demouser", async (req, res) => {
 //     let fakeuser = new User({
@@ -121,7 +127,7 @@ app.get("/about", (req, res) => {
 
 // Home Page
 app.get("/", (req, res) => {
-    res.render("home.ejs");
+    res.render("/home.ejs");
 });
 
 // 404 Error Handler
