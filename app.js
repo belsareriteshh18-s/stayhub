@@ -127,7 +127,7 @@ app.get("/about", (req, res) => {
 
 // Home Page
 app.get("/", (req, res) => {
-    res.render("/home.ejs");
+    res.render("home");
 });
 
 // 404 Error Handler
