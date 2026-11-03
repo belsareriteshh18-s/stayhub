@@ -21,20 +21,24 @@
                 </p>
             </div>
 
+
             <!-- PROPERTY IMAGE GALLERY -->
-            <div class="property-gallery">
-                <div class="main-property-image">
-                    <img src="<%= listing.image.url %>" alt="<%= listing.title %>">
-                </div>
-                <div class="side-property-images">
-                    <div class="small-property-image">
-                        <img src="<%= listing.image.url %>" alt="Property view">
-                    </div>
-                    <div class="small-property-image">
-                        <img src="<%= listing.image.url %>" alt="Property interior">
-                    </div>
-                </div>
-            </div>
+<div class="row g-4 mt-3">
+
+<% listing.images.forEach((img, index) => { %>
+    <div class="col-md-4">
+        <div class="property-image-card">
+            <img src="<%= img.url %>"
+                 alt="Property Image <%= index + 1 %>"
+                 class="img-fluid rounded">
+        </div>
+    </div>
+<% }) %>
+
+
+</div>
+
+
 
             <!-- ABOUT PROPERTY -->
             <section class="property-about mt-4">

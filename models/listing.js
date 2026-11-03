@@ -12,10 +12,12 @@ const listingSchema = new mongoose.Schema({
         type: String,
     },
 
-    image: {
-      url:String,
-        filename:String,
-    },
+    images: [
+    {
+        filename: String,
+        url: String
+    }
+     ],
 
     price: {
         type: Number,

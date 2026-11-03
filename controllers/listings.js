@@ -70,10 +70,11 @@ module.exports.createListings = async (req, res, next) => {
 
         newListing.owner = req.user._id;
 
-        newListing.image = {
-            url: req.file.path,
-            filename: req.file.filename
-        };
+        newListing.images = req.files.map
+        (file => ({
+            url: file.path,
+            filename: file.filename
+        }));
 
         newListing.geometry = feature.geometry;
 
@@ -97,11 +98,11 @@ module.exports.updateListings = async (req, res) => {
         { ...req.body.listing },
         { new: true, runValidators: true }
     );
-    if (req.file) {
-        listing.image = {
-            url: req.file.path,
-            filename: req.file.filename
-        };
+    if (req.files) {
+        listing.images = req.files.map(file => ({
+            url: file.path,
+            filename: file.filename
+        }));
 
         await listing.save();
     }

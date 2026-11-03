@@ -59,29 +59,36 @@
                             ></textarea>
                         </div>
 
-                         <!-- Image  -->
+                
                        <!-- Image -->
 <div class="mb-4">
     <label for="image" class="form-label fw-semibold">
         Upload Image
     </label>
 
-    <div class="input-group input-group-lg">
+   <div class="mb-4">
+    <label class="form-label fw-semibold">Property Images</label>
 
-        <span class="input-group-text bg-light">
-            🖼️
-        </span>
+<div class="mb-3">
+    <label for="image1" class="form-label">Image 1 – Front View</label>
+    <input type="file" name="images" id="image1"
+           class="form-control" accept="image/*" required>
+</div>
 
-        <input
-            id="image"
-            name="image"
-            type="file"
-            class="form-control"
-            accept="image/*"
-            required
-        >
+<div class="mb-3">
+    <label for="image2" class="form-label">Image 2 – Interior View</label>
+    <input type="file" name="images" id="image2"
+           class="form-control" accept="image/*" required>
+</div>
 
-    </div>
+<div class="mb-3">
+    <label for="image3" class="form-label">Image 3 – Bedroom / Other View</label>
+    <input type="file" name="images" id="image3"
+           class="form-control" accept="image/*" required>
+</div>
+
+</div>
+
 
     <div class="form-text">
         Upload an image of your property.
