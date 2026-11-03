@@ -280,27 +280,93 @@
         
     </section>
 
- <footer>
+<style>
+    footer {
+        background: #f7f7f7;
+        border-top: 1px solid #eee;
+        padding: 35px 7% 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    .f-info-socials {
+        margin-bottom: 18px;
+    }
+
+    .f-info-socials i {
+        font-size: 22px;
+        margin: 0 12px;
+        color: #fe424d;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .f-info-socials i:hover {
+        transform: translateY(-4px);
+        color: #e52e3a;
+    }
+
+    .f-info-brand {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .f-info-links {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .f-info-links a {
+        text-decoration: none;
+        color: #666;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .f-info-links a:hover {
+        color: #fe424d;
+        text-decoration: underline;
+    }
+
+    @media(max-width: 576px) {
+        footer {
+            padding: 28px 15px;
+        }
+
+        .f-info-links {
+            gap: 15px;
+        }
+    }
+</style>
+
+<footer>
     <div class="f-info">
 
-        <div class="f-info-socials">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-           
-        </div>
-
-        <div class="f-info-brand">
-            © 2026 StayHub Private Limited
-        </div>
-
-        <div class="f-info-links">
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-            <a href="/contact">Contact</a>
-        </div>
-
+    <div class="f-info-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     </div>
+
+    <div class="f-info-brand">
+        © 2026 StayHub Private Limited. All Rights Reserved.
+    </div>
+
+    <div class="f-info-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms & Conditions</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/about">About Us</a>
+    </div>
+
+</div>
+
 </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
