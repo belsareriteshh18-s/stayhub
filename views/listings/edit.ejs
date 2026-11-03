@@ -79,12 +79,12 @@
                         <div class="col-12">
 
                             <label class="form-label fw-semibold">
-                                Current Image
+                                Cover Image
                             </label>
 
                             <div class="mb-3">
                                 <img
-                                    src="<%= listing.image.url %>"
+                                    src="<%= listing.images?.[0]?.url || '/images/default.jpg' %>"
                                     alt="<%= listing.title %>"
                                     class="img-fluid rounded-3"
                                     style="max-height: 200px; width: 100%; object-fit: cover;"
@@ -97,22 +97,23 @@
                         <!-- New Image -->
                         <div class="col-12">
 
-                            <label for="image" class="form-label fw-semibold">
+                            <label for="images" class="form-label fw-semibold">
                                 Change Image
                             </label>
 
                             <div class="input-group input-group-lg">
 
                                 <span class="input-group-text bg-light">
-                                    🖼️
+                                    
                                 </span>
 
                                 <input
                                     type="file"
                                     class="form-control"
-                                    id="image"
-                                    name="image"
+                                    id="images"
+                                    name="images"
                                     accept="image/jpeg,image/png,image/webp"
+                                    multiple
                                 >
 
                             </div>
