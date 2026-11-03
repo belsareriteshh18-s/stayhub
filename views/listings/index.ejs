@@ -84,7 +84,7 @@
                     <div class="card h-100 shadow-sm"> 
 
                         <img 
-                            src="<%= listing.image?.url || '/images/default.jpg' %>" 
+                            src="<%= listing.images?.[0]?.url || '/images/default.jpg' %>" 
                             class="card-img-top" 
                             alt="<%= listing.title %>" 
                             style="height: 220px; object-fit: cover;"
